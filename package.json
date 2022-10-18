@@ -5,11 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev-lan": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "lorem-ipsum": "^2.0.8",
     "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.1"
   }
 }

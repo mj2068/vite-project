@@ -1,9 +1,11 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
+import "./style.css";
+import javascriptLogo from "./javascript.svg";
+import { setupCounter } from "./counter.js";
+import { loremIpsum, LoremIpsum } from "lorem-ipsum";
 
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
   <div>
+
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -18,6 +20,32 @@ document.querySelector('#app').innerHTML = `
       Click on the Vite logo to learn more
     </p>
   </div>
-`
+`;
 
-setupCounter(document.querySelector('#counter'))
+setupCounter(document.querySelector("#counter"));
+
+console.log(LoremIpsum);
+
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 8,
+    min: 4,
+  },
+  wordsPerSentence: {
+    max: 16,
+    min: 4,
+  },
+});
+
+console.log(lorem.generateWords());
+const app = document.querySelector("#app");
+
+for (let index = 1; index < 6; index++) {
+  const node = document.createElement("p");
+  node.innerHTML = lorem.generateWords();
+  app.appendChild(node);
+}
+
+const node = document.createElement("p");
+node.innerText = lorem.generateSentences(10);
+app.appendChild(node);

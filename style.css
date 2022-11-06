@@ -29,6 +29,30 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
+  background-color: #f003;
+}
+
+#container {
+  position: relative;
+}
+.box1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: #fff;
+  /* animation: boxTumble infinite 1s ease-out; */
+}
+.box1:hover {
+  background-color: #acc;
+}
+
+@keyframes boxTumble {
+  100% {
+    translate: 500px;
+    /* opacity: 0%; */
+    /* transform: translateY(100px); */
+  }
 }
 
 button {
